@@ -1,5 +1,7 @@
 package com.several.vnoticeboard.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +16,13 @@ public class HomeController {
 	public LayoutDialect layoutDialect() {
 	    return new LayoutDialect();
 	}
-
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showHome() {
+		LOGGER.debug("Rendering home page");
+		
 		return "home";
 	}
 }
