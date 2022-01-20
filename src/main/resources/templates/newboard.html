@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="layouts/main">
+
+<head>
+	<title>New Board</title>
+
+</head>
+
+
+<body>
+
+	<div layout:fragment="content">
+		<div class="container">
+			<!-- content start -->
+			
+			<br /><br />
+			<h1>Do you want to create board for '<span th:text="${boardName}">Board Name</span>'?</h1>
+			
+			<br />
+			
+			<form th:action="@{/register}" method="post">
+			
+			<input type="hidden" id="boardName" name="boardName" th:value="${boardName}"></input>
+			
+			  <div class="form-row align-items-center">
+			    <div class="col-auto">
+			      <div class="input-group mb-2">
+			        <div class="input-group-prepend">
+			          <div class="input-group-text">Password</div>
+			        </div>
+			        <input type="password" name="password" class="form-control" id="password" placeholder="">
+			        
+			        
+			        
+			      </div>
+			    </div>
+			    <div class="col-auto">
+			      <button type="submit" class="btn btn-info mb-2">Create Board</button>
+			    </div>
+			  </div>
+			</form>
+			
+			<p class="text-danger" th:text="${param.error[0]}" th:unless="${param.error == null}">
+                        Invalid Password
+                    </p>
+			
+			<!-- content end -->
+		</div>
+	</div>
+	
+</body>
+</html>

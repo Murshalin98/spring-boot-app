@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="layouts/main">
+
+<head>
+	<title>Board</title>
+
+</head>
+
+
+<body>
+
+	<div layout:fragment="content">
+		<div class="container">
+			<!-- content start -->
+			
+			<br /><br />
+			<h1 th:text="${boardName}">School Board Page</h1>
+			<br />
+			
+			<h3>Content:</h3>
+			<span th:text="${boardContent}">Content Gose Here</span>
+			
+			<!-- content end -->
+		</div>
+	</div>
+	
+</body>
+</html>
